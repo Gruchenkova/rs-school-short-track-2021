@@ -33,15 +33,14 @@ function getCommonCharacterCount(s1, s2) {
       obj2[arr2[i]] = 1;
     }
   }
-  for (const key in obj2) {
-    console.log(obj1[key]);
+  for (const key in Object.keys(obj2)) {
     if (obj2[key] >= obj1[key]) {
       objR[key] = obj1[key];
     } else {
       objR[key] = obj2[key];
     }
   }
-  for (const key in objR) {
+  for (const key in Object.keys(objR)) {
     result += objR[key];
   }
   return result;
