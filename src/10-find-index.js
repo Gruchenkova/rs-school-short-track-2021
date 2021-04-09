@@ -11,8 +11,8 @@
  * For ([1, 2, 3], 2) should return 1
  *
  */
-function findIndex(/* array, value */) {
-  return array.indexOf(value)
+function findIndex(array, value) {
+  return array.indexOf(value);
 }
 
 module.exports = findIndex;

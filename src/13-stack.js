@@ -12,22 +12,25 @@
  */
 class Stack {
   constructor () {
-    this.data = [];//array with value
-    this.top = 0;//index top element
+    this.data = [];// array with value
+    this.top = 0;// index top element
   }
-  //добавить элемент в начало стека, значит нужно увеличить значение top и оно будет указывать на следущее пустое место
+
+  // добавить элемент в начало стека, значит нужно увеличить значение top и оно будет указывать на следущее пустое место
   push(element) {
-    this.data [this.top] = element;
-    this.top = this.top + 1;
+    this.data[this.top] = element;
+    this.top += 1;
   }
-  //удалить элемент сверху стека, нужно ументшить значение top
+
+  // удалить элемент сверху стека, нужно ументшить значение top
   pop() {
-    this.top = this.top - 1;
-    return this.data.pop()
+    this.top -= 1;
+    return this.data.pop();
   }
-  //получить верхний эл стека, top - 1 т.к top пустое место
+
+  // получить верхний эл стека, top - 1 т.к top пустое место
   peek() {
-    return this.data [this.top - 1];
+    return this.data[this.top - 1];
   }
 }
 

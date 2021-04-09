@@ -18,13 +18,13 @@
  */
 
 function removeKFromList(l, k) {
-  let result = [];
+  const result = [];
   for (let i = 0; i < l.length; i++) {
-    if (l[i] != k) {
-      result.push(l[i])
+    if (l[i] !== k) {
+      result.push(l[i]);
     }
   }
-  return result
+  return result;
 }
 
 module.exports = removeKFromList;

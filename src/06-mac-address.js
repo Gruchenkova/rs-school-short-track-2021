@@ -13,14 +13,14 @@
  *
  */
 function isMAC48Address(n) {
-  let result = [];
+  const result = [];
   let res = '';
-  const regex = /^[\-A-Fa-f0-9]+$/g;
-  let arr = n.split('');
+  const regex = /^[-A-Fa-f0-9]+$/g;
+  const arr = n.split('');
   for (let i = 2; i < arr.length; i += 3) {
     if (arr[i] === '-') {
-      result.push(true)
-    } else result.push(false)
+      result.push(true);
+    } else result.push(false);
   }
 
   if (regex.test(n)) {
@@ -29,8 +29,8 @@ function isMAC48Address(n) {
     res = false;
   }
   if (result.indexOf(false) === -1 && res === true) {
-    return true
-  } else return false
+    return true;
+  } return false;
 }
 
 module.exports = isMAC48Address;

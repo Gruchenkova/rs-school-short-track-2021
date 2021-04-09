@@ -11,19 +11,19 @@
  *
  */
 function getSumOfDigits(n) {
-  let numb = n
-  let string = numb + '';
+  let numb = n;
+  let string = `${numb}`;
   for (let k = 0; k < string.length; k++) {
-  string = numb + '';
-    if (string.length != 1) {
+    string = `${numb}`;
+    if (string.length !== 1) {
       numb = 0;
-      let arr = string.split('')
+      const arr = string.split('');
       for (let i = 0; i < arr.length; i++) {
-        let k = +arr[i];
-        numb += k;
+        const c = +arr[i];
+        numb += c;
       }
     }
-  }return numb
+  } return numb;
 }
 
 module.exports = getSumOfDigits;

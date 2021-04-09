@@ -10,15 +10,14 @@
  *
  */
 function deleteDigit(n) {
-  let lengthNumber = n.toString().length;
-    let num = n + '';
-    let firstNumb = + num.substr(0,lengthNumber-1)
-    let secondNumb = + num.substr(1,lengthNumber-1)
-    if (firstNumb>secondNumb){
-    return firstNumb
-    }else {
-    return secondNumb
-    }
+  const lengthNumber = n.toString().length;
+  const num = `${n}`;
+  const firstNumb = +num.substr(0, lengthNumber - 1);
+  const secondNumb = +num.substr(1, lengthNumber - 1);
+  if (firstNumb > secondNumb) {
+    return firstNumb;
+  }
+  return secondNumb;
 }
 
 module.exports = deleteDigit;

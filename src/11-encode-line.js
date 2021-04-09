@@ -10,27 +10,25 @@
  */
 function encodeLine(str) {
   if (!str) {
-    console.log('')
-    return "";
-}
-let letters = str.split("");
-let currentLetterCount = 1;
-let currentLeter = letters[0];
-let result = "";
+    return '';
+  }
+  const letters = str.split('');
+  let currentLetterCount = 1;
+  let currentLeter = letters[0];
+  let result = '';
 
-for (let i = 0; i < str.length - 1; i++) {
+  for (let i = 0; i < str.length - 1; i++) {
     if (currentLeter === letters[i + 1]) {
-        currentLetterCount++;
+      currentLetterCount++;
+    } else {
+      result = result + currentLetterCount + currentLeter;
+      currentLeter = letters[i + 1];
+      currentLetterCount = 1;
     }
-    else {
-        result = result +currentLetterCount + currentLeter;
-        currentLeter = letters[i + 1];
-        currentLetterCount = 1;
-    }
-}
-result = result + currentLeter + currentLetterCount;
-result = result.replace(/1/g, '');
-return result;
+  }
+  result = result + currentLeter + currentLetterCount;
+  result = result.replace(/1/g, '');
+  return result;
 }
 
 module.exports = encodeLine;

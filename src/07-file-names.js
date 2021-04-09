@@ -14,23 +14,21 @@
  *
  */
 function renameFiles(names) {
-  if (names.length === 0){
-    return []
+  if (names.length === 0) {
+    return [];
+  }
+  const result = [];
+  result.push(names[0]);
+  for (let i = 1; i < names.length; i++) {
+    if (result.includes(names[i]) === true) {
+      if (result.includes(`${names[i]}(1)`)) {
+        result.push(`${names[i]}(2)`);
+      } else result.push(`${names[i]}(1)`);
+    } else {
+      result.push(names[i]);
     }
-      let result = [];
-      result.push(names[0]);
-      for (let i = 1; i < names.length; i++) {
-        if (result.includes(names[i])===true) {
-        if (result.includes(names[i] + '(1)')){
-        result.push(names[i] + '(2)')
-        }else
-          result.push(names[i] + '(1)')
-        } else {
-          result.push(names[i])
-        }
-
-      }
-      return result
+  }
+  return result;
 }
 
 module.exports = renameFiles;
