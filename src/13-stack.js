@@ -11,16 +11,23 @@
  *
  */
 class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+  constructor () {
+    this.data = [];//array with value
+    this.top = 0;//index top element
   }
-
+  //добавить элемент в начало стека, значит нужно увеличить значение top и оно будет указывать на следущее пустое место
+  push(element) {
+    this.data [this.top] = element;
+    this.top = this.top + 1;
+  }
+  //удалить элемент сверху стека, нужно ументшить значение top
   pop() {
-    throw new Error('Not implemented');
+    this.top = this.top - 1;
+    return this.data.pop()
   }
-
+  //получить верхний эл стека, top - 1 т.к top пустое место
   peek() {
-    throw new Error('Not implemented');
+    return this.data [this.top - 1];
   }
 }
 

@@ -10,18 +10,26 @@
  * queue.dequeue(); // returns the top element from queue and deletes it, returns 1
  *
  */
-
+//first in first out
 class Queue {
+  constructor () {
+    this.data = []; //список наших элементов
+    this.rear = 0; //значение используемое для хранения позиции, в которой будет сохранён следцющий элемент
+  }
   get size() {
-    throw new Error('Not implemented');
+    return this.rear
   }
-
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  //вставить элемент в конец очереди, значит нужно увеличить rear
+  enqueue(element) {
+    this.data [this.rear] = element;
+    this.rear = this.rear + 1;
   }
-
+  //удалить передний элемент из очереди, значит нужно уменьшить rear
   dequeue() {
-    throw new Error('Not implemented');
+    if (this.size() != 0){
+      this.rear = this.rear - 1;
+    return this.data.shift()
+    }
   }
 }
 
