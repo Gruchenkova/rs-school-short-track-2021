@@ -33,15 +33,17 @@ function getCommonCharacterCount(s1, s2) {
       obj2[arr2[i]] = 1;
     }
   }
-  for (const key in Object.keys(obj2)) {
-    if (obj2[key] >= obj1[key]) {
-      objR[key] = obj1[key];
+  const key2 = Object.keys(obj2);
+  for (let i = 0; i < key2.length; i++) {
+    if (obj2[key2[i]] >= obj1[key2[i]]) {
+      objR[key2[i]] = obj1[key2[i]];
     } else {
-      objR[key] = obj2[key];
+      objR[key2[i]] = obj2[key2[i]];
     }
   }
-  for (const key in Object.keys(objR)) {
-    result += objR[key];
+  const keyR = Object.keys(objR);
+  for (let i = 0; i < key2.length; i++) {
+    result += objR[keyR[i]];
   }
   return result;
 }

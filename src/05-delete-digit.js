@@ -10,14 +10,19 @@
  *
  */
 function deleteDigit(n) {
-  const lengthNumber = n.toString().length;
-  const num = `${n}`;
-  const firstNumb = +num.substr(0, lengthNumber - 1);
-  const secondNumb = +num.substr(1, lengthNumber - 1);
-  if (firstNumb > secondNumb) {
-    return firstNumb;
+  const string = n.toString();
+  const arr = [];
+  for (let i = 0; i < string.length; i++) {
+    for (let k = 0; k < string.length; k++) {
+      if (i !== k) {
+        const newString = string[i] + string[k];
+        const numb = +newString;
+        arr.push(numb);
+      }
+    }
   }
-  return secondNumb;
+  arr.sort((a, b) => a - b);
+  return arr[arr.length - 1];
 }
 
 module.exports = deleteDigit;

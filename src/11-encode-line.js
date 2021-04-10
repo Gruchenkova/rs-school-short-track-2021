@@ -26,7 +26,7 @@ function encodeLine(str) {
       currentLetterCount = 1;
     }
   }
-  result = result + currentLeter + currentLetterCount;
+  result = result + currentLetterCount + currentLeter;
   result = result.replace(/1/g, '');
   return result;
 }
